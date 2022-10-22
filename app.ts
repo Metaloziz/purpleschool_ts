@@ -1,6 +1,8 @@
-const a = 10
-const b = 20
+function foo(name: string, title: string) {
 
-const res = a + b
+  return name + title
 
-console.log(res)
+
+}
+
+console.log(foo('a', 'и'));

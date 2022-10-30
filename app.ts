@@ -1,8 +1,18 @@
-function foo(name: string, title: string) {
-
-  return name + title
+const skill: [number, string] = [1, 'power']
 
 
+const skill2: [number, string, ...boolean[]] = [1, 'power', true, false, false]
+
+
+type A = {
+  title: string,
+  age: number
 }
 
-console.log(foo('a', 'и'));
+type B = {
+  power: number
+}
+
+type C = A & B
+
+let objA: Partial<C> = {}

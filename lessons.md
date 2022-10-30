@@ -53,4 +53,12 @@ for (const objKey in obj) {
 console.log(objKey)
 }
 
+## 6. урок "Tuples"
 
+const skill: [number, string] = [1, 'power'] 
+
+    это просто чёткое описание массива. Например, в этом только два элемента
+
+const skill2: [number, string, ...boolean[]] = [1, 'power', true, false, false]
+
+    Оказывается спред оператор применим к типам.

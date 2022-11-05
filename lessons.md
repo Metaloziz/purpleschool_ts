@@ -62,3 +62,8 @@ const skill: [number, string] = [1, 'power']
 const skill2: [number, string, ...boolean[]] = [1, 'power', true, false, false]
 
     Оказывается спред оператор применим к типам.
+
+## 7. урок "Readonly"
+
+    Например у массивов в принцепе убират методы, которые могу его мутироват 
+    (push(), pop(), ... )

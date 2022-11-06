@@ -1,6 +1,12 @@
-let arr: readonly string[] = ['1', '2']
+const enum App {
+  one,
+  two,
+}
 
-let arr2 = arr.pop()
 
-console.log(arr);
-console.log(arr2);
+let a: string = 'one'
+
+
+// let b = App[a as keyof typeof App]
+
+let c = App.one

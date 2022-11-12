@@ -1,12 +1,11 @@
-const enum App {
-  one,
-  two,
+function fooo(arg: string | number[]) {
+  if (typeof arg === 'string') {
+
+    arg.toLocaleLowerCase()
+
+  } else {
+
+    arg.pop()
+  }
 }
 
-
-let a: string = 'one'
-
-
-// let b = App[a as keyof typeof App]
-
-let c = App.one

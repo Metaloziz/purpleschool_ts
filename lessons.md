@@ -86,3 +86,8 @@ const skill2: [number, string, ...boolean[]] = [1, 'power', true, false, false]
 
     Пример литерального типа:
     let a: 'post' | 'get' = 'get'
+
+## 11. урок "Type Aliases"
+
+    Когда мы тип присваиваем переменной объявленной через type, то это и есть 
+    Alias type

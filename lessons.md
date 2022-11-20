@@ -102,3 +102,8 @@ const skill2: [number, string, ...boolean[]] = [1, 'power', true, false, false]
     
     При использовании классов лучше использовать Interfaces, а Types чаще 
     используется для примитивов.
+
+## 14. урок "Optional"
+
+    Опwиональность key?: number ключа не эквивалента записи key: number | 
+    undefined

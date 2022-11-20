@@ -1,23 +1,8 @@
-let a: any = 10
-
-let b = a + 1
-
-let c: unknown = 11
-
-const num = 100000000
-
-let aaa = typeof num
-
-console.log(aaa)
-
-
-if (typeof c === 'number') {
-  let d = c + 10
+type User = {
+  id: number
+  age?: number
 }
 
-if (typeof num === 'number') {
-
-  console.log('')
+let a: User = {
+  id: 10
 }
-
-let aaaaaa: 'post' | 'get' = 'post'

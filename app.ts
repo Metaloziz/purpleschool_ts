@@ -1,24 +1,25 @@
 type User = {
   id: number
-  age?: number
+  age: number
 }
 
-let a: User = {
-  id: 10
+type User2 = {
+  sex?: boolean
 }
 
+type User3 = User | User2
 
-const foo = () => {
-  console.log('')
+let a: User3 = {
+  id: 1,
+  age: 10,
+  sex: false
 }
 
-let b = foo()
+type User4 = User & User2
 
-
-const foo2 = () => {
-  return typeof b
+let b: User4 = {
+  id: 1,
+  age: 10,
+  sex: false
 }
 
-let c = foo2()
-
-console.log(c)

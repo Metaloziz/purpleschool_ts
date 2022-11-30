@@ -43,19 +43,17 @@ throw new Error('!!!!!')
 
     Для итерации по массиву 
 
-for (const number of arr) {
-console.log(number)
+for (const number of arr) { console.log(number)
 }
 
     Для итерации по по ключам объекта 
 
-for (const objKey in obj) {
-console.log(objKey)
+for (const objKey in obj) { console.log(objKey)
 }
 
 ## 6. урок "Tuples"
 
-const skill: [number, string] = [1, 'power'] 
+const skill: [number, string] = [1, 'power']
 
     это просто чёткое описание массива. Например, в этом только два элемента
 
@@ -99,7 +97,7 @@ const skill2: [number, string, ...boolean[]] = [1, 'power', true, false, false]
     3. Чтобы объединить типы нужно использовать extends вместо &.
 
 ## 13. урок "Types или Interfaces?"
-    
+
     При использовании классов лучше использовать Interfaces, а Types чаще 
     используется для примитивов.
 
@@ -112,3 +110,7 @@ const skill2: [number, string, ...boolean[]] = [1, 'power', true, false, false]
 
     Мы можем указать возвращаемое значение в фунекции как void - это буде значить,
     что возвращаемое значение из функции игнорируется т.е. оно может быть или не быть
+
+## 15. урок "Unknown"
+
+    В отличии от any этот тип не позволяет обращаться к методам объекта.Ближайшее где можно использовать - заглушка в ответе сервера. Т.е. позже этот тим нужно уточнить. 

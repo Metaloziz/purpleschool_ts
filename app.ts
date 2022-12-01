@@ -1,25 +1,12 @@
-type User = {
-  id: number
-  age: number
+const isNumber = (X: number | string): boolean => {
+
+  if (typeof X === 'string') {
+    return true
+  } else if (typeof X === 'number') {
+    return false
+  }
+
+  // Исчерпывающая проверка. Без неё есть ещё один return undefined
+  throw new Error('Ты передал что-то не то')
+
 }
-
-type User2 = {
-  sex?: boolean
-}
-
-type User3 = User | User2
-
-let a: User3 = {
-  id: 1,
-  age: 10,
-  sex: false
-}
-
-type User4 = User & User2
-
-let b: User4 = {
-  id: 1,
-  age: 10,
-  sex: false
-}
-

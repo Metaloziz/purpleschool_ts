@@ -1,23 +1,26 @@
-class User {
-  private _login: string
-  createdAt: Date
+interface ILogger {
+  log(...args: any[]): void
 
-  set login(text: string) {
-    this._login = 'LOGIN-' + text
-    this.createdAt = new Date() // side effect
+  error(...args: any[]): void
+}
+
+class Logger implements ILogger {
+  log(...args: any[]): void {
+
+    console.log(args);
   }
 
-  get login() {
-    return this._login
+  error(...args: any[]): void {
+
+    throw new Error('ошибка')
+
   }
 
 }
 
 
-let user = new User()
-
-user.login = 'Andrew'
+const logg = new Logger()
 
 
-console.log(user);
-console.log(user.login);
+logg.log(1, 'asd', true)
+logg.error(1, 'asd', true)

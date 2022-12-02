@@ -118,3 +118,8 @@ const skill2: [number, string, ...boolean[]] = [1, 'power', true, false, false]
 ## 17. урок "Never"
 
     Тип функций которые выбрасывают ошибку т.е. у них нету ни явноного ни не явного return 
+
+## 18. урок "Null"
+    
+    null это осознанное отсутствие данных.
+    // "strictNullChecks": true, это правило запрещает присваивать null любым типам кроме null и any

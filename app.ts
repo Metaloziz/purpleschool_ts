@@ -1,0 +1,1 @@
+const AAA = 10

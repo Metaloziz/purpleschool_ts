@@ -1,44 +1,57 @@
-const App = (x: string | number): x is string => {
+interface IPayment {
+  sum: number;
+  from: number;
+  to: number;
+}
 
-  return typeof x === 'string'
+enum PaymentStatus {
+  Success = 'success',
+  Failed = 'failed',
+}
+
+interface IPaymentRequest extends IPayment {
+}
+
+interface IDataSuccess extends IPayment {
+  databaseId: number;
+}
+
+interface IDataFailed {
+  errorMessage: string;
+  errorCode: number;
+}
+
+interface IResponseSuccess {
+  status: PaymentStatus.Success;
+  data: IDataSuccess;
+}
+
+interface IResponseFailed {
+  status: PaymentStatus.Failed;
+  data: IDataFailed;
+}
+
+
+const checkResultGuarden = (response: IResponseSuccess | IResponseFailed): response is IResponseSuccess => {
+
+  // return 'databaseId' in response?.data
+  return  response.status === PaymentStatus.Success
 
 }
 
 
-console.log(App('1'))
+const someAction = (response: IResponseSuccess | IResponseFailed) => {
 
 
-// более наглядно на сложном типе
-
-type User = {
-  id: string
-}
-
-type Admin = {
-  id: string
-  role: 'admin'
-}
-
-function isAdmin(arg: User | Admin): arg is Admin {
-
-  // return 'role' in arg
-  // or
-  return (arg as Admin).role !== undefined
-
-}
-
-// эта функция сужает тип при использовании её в if...else
+  if (checkResultGuarden(response)) {
 
 
-function foo (arg: User | Admin){
+    let money = response.data.sum
 
-  if(isAdmin(arg)){
-    arg
-   // внутри arg есть ДВА ключа
   } else {
-    arg
-    // внутри arg есть ОДИН ключ
-  }
 
+    let error = response.data.errorMessage
+
+  }
 
 }

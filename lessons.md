@@ -131,3 +131,5 @@ const skill2: [number, string, ...boolean[]] = [1, 'power', true, false, false]
 ## 20. урок "Guard"
 
     функции использующиеся для проверки типов. Они возвращают type Guard т.е. они сужают тип. 
+
+## 20. урок "Guard" Практика

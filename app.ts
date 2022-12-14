@@ -1,57 +1,9 @@
-interface IPayment {
-  sum: number;
-  from: number;
-  to: number;
-}
-
-enum PaymentStatus {
-  Success = 'success',
-  Failed = 'failed',
-}
-
-interface IPaymentRequest extends IPayment {
-}
-
-interface IDataSuccess extends IPayment {
-  databaseId: number;
-}
-
-interface IDataFailed {
-  errorMessage: string;
-  errorCode: number;
-}
-
-interface IResponseSuccess {
-  status: PaymentStatus.Success;
-  data: IDataSuccess;
-}
-
-interface IResponseFailed {
-  status: PaymentStatus.Failed;
-  data: IDataFailed;
-}
-
-
-const checkResultGuarden = (response: IResponseSuccess | IResponseFailed): response is IResponseSuccess => {
-
-  // return 'databaseId' in response?.data
-  return  response.status === PaymentStatus.Success
+class User {
+  name: string
 
 }
 
-
-const someAction = (response: IResponseSuccess | IResponseFailed) => {
-
-
-  if (checkResultGuarden(response)) {
-
-
-    let money = response.data.sum
-
-  } else {
-
-    let error = response.data.errorMessage
-
-  }
-
-}
+const user = new User()
+console.log(user)
+user.name = 'AAAAA'
+console.log(user);

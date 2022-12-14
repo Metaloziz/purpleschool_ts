@@ -132,4 +132,8 @@ const skill2: [number, string, ...boolean[]] = [1, 'power', true, false, false]
 
     функции использующиеся для проверки типов. Они возвращают type Guard т.е. они сужают тип. 
 
-## 20. урок "Guard" Практика
+## 20. урок "Guard" Практика 
+
+## 21. урок "Class"
+
+    Чтобы убрать обязательную инициализацию ключа в классе - в ts.config "strictPropertyInitialization": false,  

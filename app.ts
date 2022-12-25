@@ -1,34 +1,33 @@
-class User {
-  age: number
-
-  name: string
+class Age {
+  age
 
   constructor(age: number) {
     this.age = age
   }
+}
 
-  setName() {
-    this.name = 'Default'
+class Name {
+  name
+
+  constructor(name: string) {
+    this.name = name
   }
 }
 
 
-class SupperUser extends User {
+class User {
 
-  constructor() {
+  age: Age
+  name: Name
 
-    const age = Math.random()
-    super(age);
-  }
-
-  override setName() {
-    super.setName(); // если мы хотим переопределить метод то обязательно нужно
-    // вызвать прошлый через super, чтобы при изменении исходного метода не
-    // исправлять его везде
-
-
-    // делаем то хотим
-
+  constructor(age: Age, name: Name) {
+    this.age = age
+    this.name = name
   }
 
 }
+
+// отличие от наследования - здесь мы можем каждую сущность менять независимо от
+// других
+
+

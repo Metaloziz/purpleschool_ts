@@ -1,33 +1,29 @@
-class Age {
-  age
+class Vehicle {
+  private _damage: string[] = []
 
-  constructor(age: number) {
-    this.age = age
+  public make: string = 'bmw'
+  #year: string = '2023'
+
+  get damage() {
+    return this._damage
   }
-}
 
-class Name {
-  name
-
-  constructor(name: string) {
-    this.name = name
+  get year() {
+    return this.#year
   }
-}
 
 
-class User {
+  addDamage(damage: string) {
 
-  age: Age
-  name: Name
+    this._damage.push(damage)
+    return this._damage
 
-  constructor(age: Age, name: Name) {
-    this.age = age
-    this.name = name
   }
 
 }
 
-// отличие от наследования - здесь мы можем каждую сущность менять независимо от
-// других
+const car = new Vehicle()
+
+console.log(car.addDamage('1'));
 
 

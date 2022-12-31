@@ -1,29 +1,14 @@
-class Vehicle {
-  private _damage: string[] = []
+class UserService {
+  static staticKey: string = 'asd'
 
-  public make: string = 'bmw'
-  #year: string = '2023'
-
-  get damage() {
-    return this._damage
-  }
-
-  get year() {
-    return this.#year
-  }
-
-
-  addDamage(damage: string) {
-
-    this._damage.push(damage)
-    return this._damage
-
+  getData() {
+    return UserService.staticKey // только так, через this не обратиться
   }
 
 }
 
-const car = new Vehicle()
 
-console.log(car.addDamage('1'));
+let user = new UserService()
+user.staticKey // в экземпляре нет этого ключа
 
-
+console.log(UserService.staticKey); // он есть у самого класса

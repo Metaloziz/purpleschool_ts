@@ -1,14 +1,21 @@
-class UserService {
-  static staticKey: string = 'asd'
+// потеряй контекст
 
-  getData() {
-    return UserService.staticKey // только так, через this не обратиться
+class Payment {
+  private date: Date = new Date()
+
+  getDate(this: Payment) { // Фиксация контекста, чтобы мы даже потерять его не
+    // смогли. Существует только в TS
+    return this?.date
   }
+}
 
+const NewObj = {
+  date: 'error'
 }
 
 
-let user = new UserService()
-user.staticKey // в экземпляре нет этого ключа
+const item = new Payment()
 
-console.log(UserService.staticKey); // он есть у самого класса
+let func = item.getDate
+
+console.log(func.bind(NewObj)());

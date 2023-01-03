@@ -1,21 +1,26 @@
-// потеряй контекст
+abstract class App {
+  abstract send(N: number): string
 
-class Payment {
-  private date: Date = new Date()
 
-  getDate(this: Payment) { // Фиксация контекста, чтобы мы даже потерять его не
-    // смогли. Существует только в TS
-    return this?.date
+  someNewMethod(N: number) { // обычный метод в котором можно обращаться к
+    // абстрактному
+    this.send(N)
   }
-}
 
-const NewObj = {
-  date: 'error'
 }
 
 
-const item = new Payment()
+class Class extends App {
+  send(N: number) {
+    console.log(N)
+    return N.toString();
+  }
 
-let func = item.getDate
 
-console.log(func.bind(NewObj)());
+}
+
+
+const a = new Class()
+
+a.someNewMethod(11)
+

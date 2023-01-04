@@ -134,6 +134,10 @@ const skill2: [number, string, ...boolean[]] = [1, 'power', true, false, false]
 
 ## 20. урок "Guard" Практика
 
+______________________________________________________________________
+
+# Class
+
 ## 21. урок "Class"
 
     Чтобы убрать обязательную инициализацию ключа в классе - в ts.config "strictPropertyInitialization": false,  
@@ -195,3 +199,17 @@ const skill2: [number, string, ...boolean[]] = [1, 'power', true, false, false]
     С их помощью мы можем наброски классов, без реализации. например указать в 
     методе типы аргументов и возвращаемого элемента. Нельзя создать экземпляр 
     абстрактного класса.
+
+______________________________________________________________________
+
+# Компилятор TS
+
+## 32. Абстрактный класс
+
+    В настройках TS можно указывать какие файлы необходимо компилировать.
+
+     /* JavaScript Support */
+    // "allowJs": true,                                  /* Allow JavaScript files to be a part of your program. Use the 'checkJS' option to get errors from these files. */
+    // "checkJs": true,  
+
+    эти две настройки помогают понемногу переводить ghjtrn c JS на TS. 

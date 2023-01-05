@@ -24,3 +24,11 @@ const a = new Class()
 
 a.someNewMethod(11)
 
+
+type SomeType = {
+  id: number
+}
+
+
+// some comment
+

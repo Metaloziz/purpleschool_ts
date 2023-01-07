@@ -1,34 +1,25 @@
-abstract class App {
-  abstract send(N: number): string
+type Car = {
+
+  speed: number
+}
 
 
-  someNewMethod(N: number) { // обычный метод в котором можно обращаться к
-    // абстрактному
-    this.send(N)
-  }
+type FunType<T extends Car> = (car: T) => number
+// T автоматически должен быть объектом
+
+
+let fun: FunType<Car> = (car) => {
+
+
+  let result = car.speed * 0.62
+
+  console.log(result)
+
+  return result
 
 }
 
 
-class Class extends App {
-  send(N: number) {
-    console.log(N)
-    return N.toString();
-  }
+const BMW: Car = {speed: 160}
 
-
-}
-
-
-const a = new Class()
-
-a.someNewMethod(11)
-
-
-type SomeType = {
-  id: number
-}
-
-
-// some comment
-
+fun(BMW)

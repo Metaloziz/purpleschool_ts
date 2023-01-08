@@ -1,25 +1,15 @@
-type Car = {
+// Indexed Access Types
 
-  speed: number
+type UserType = {
+  id: number
+
+  age: {
+    count: number
+    sex: boolean
+  }
 }
 
-
-type FunType<T extends Car> = (car: T) => number
-// T автоматически должен быть объектом
+type NewIndexTypeFromUseType = UserType['age']
 
 
-let fun: FunType<Car> = (car) => {
-
-
-  let result = car.speed * 0.62
-
-  console.log(result)
-
-  return result
-
-}
-
-
-const BMW: Car = {speed: 160}
-
-fun(BMW)
+let A: NewIndexTypeFromUseType = {count: 90, sex: false}

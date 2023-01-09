@@ -1,15 +1,38 @@
 // Indexed Access Types
 
-type UserType = {
-  id: number
 
-  age: {
-    count: number
-    sex: boolean
-  }
+enum Sex {
+  male,
+  female
 }
 
-type NewIndexTypeFromUseType = UserType['age']
+type UserType<T extends keyof typeof Sex> = {
+  id: number
+
+  role: T extends 'male' ? 'solder' : 'doctor'
+}
 
 
-let A: NewIndexTypeFromUseType = {count: 90, sex: false}
+const User: UserType<'male'> = {
+  id: 10,
+
+  role: "solder"
+}
+
+
+// OR
+
+type UserType2<T extends Sex> = {
+  id: number
+
+  role: T extends Sex.male ? 'solder' : 'doctor'
+}
+
+
+const User2: UserType2<Sex.female> = {
+  id: 10,
+
+  role: "doctor"
+}
+
+

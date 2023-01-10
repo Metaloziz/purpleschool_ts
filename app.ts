@@ -1,38 +1,37 @@
 // Indexed Access Types
 
 
-enum Sex {
-  male,
-  female
+type Roles = 'admin' | 'student' | 'parent'
+
+
+type MapperType<T> = {
+  [key in keyof T]: Roles
 }
 
-type UserType<T extends keyof typeof Sex> = {
-  id: number
+type UserType2 = {
+  user1: any
+  user2: any
+  user3: any
 
-  role: T extends 'male' ? 'solder' : 'doctor'
 }
 
-
-const User: UserType<'male'> = {
-  id: 10,
-
-  role: "solder"
-}
+type ConvertAllKeysType = MapperType<UserType2>
 
 
-// OR
-
-type UserType2<T extends Sex> = {
-  id: number
-
-  role: T extends Sex.male ? 'solder' : 'doctor'
+let AA22: ConvertAllKeysType = {
+  user1: 'admin',
+  user2: 1,   // все типы ANY заменились
+  user3: null
 }
 
 
-const User2: UserType2<Sex.female> = {
-  id: 10,
+type UsersType = {
 
-  role: "doctor"
+  [key: string]: Roles
+
 }
 
 
+let a: UsersType = {
+  'asdsd': "admin"
+}
